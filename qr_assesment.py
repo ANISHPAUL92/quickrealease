@@ -107,9 +107,8 @@ def fetch_data_from_URL( url ):
     """Method to fetch data from the URl"""
 
     response_api = requests.get(url)
-    data = response_api.text
-    parse_json = json.loads(data)
-    partsdescription = parse_json["data"]
+    json_data = response_api.json
+    partsdescription = json_data["data"]
 
     return partsdescription
     
